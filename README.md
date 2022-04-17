@@ -24,17 +24,17 @@ The main purpose of this network is to expose a load-balanced and monitored inst
 Load balancing ensures that the application will be highly available, in addition to restricting in-bound to the network.
 
  - Load Balance plays an important security role by off-loading distributed denial-of-service (DDoS) attacks
- - Implementing the use of a Jump Box its possible 
+ - Implementing the use of a Jump Box its possible secure the connection before launching any administrative tasks or even to connect to other serveres
 
+Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the data and system logs.
+- What does Filebeat watch for?
+  - Filebeat monitors the log files or specific locations that you can select, collects log events and forwards to the Logstash or Elasticsearch for indexing. 
 
-- _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_
-
-Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _____ and system _____.
-- _TODO: What does Filebeat watch for?_
-- _TODO: What does Metricbeat record?_
-
+- TODO: What does Metricbeat record?
+  -Meatricbeat collects metrics from the operating system and from the services running on the server and sends it to the Elastichsearch or Logstash.
+   
 The configuration details of each machine may be found below.
-_Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
+
 
 | Name       | Function   | IP Address | Operating System |
 |------------|------------|------------|------------------|
@@ -53,15 +53,19 @@ Only the Jum-Box-Provisioner machine can accept connections from the Internet. A
   - 184.144.115.191 
 
 Machines within the network can only be accessed by Jump-Bpx-Provisioner.
-- _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_
+- Which machine did you allow to access your ELK VM? What was its IP address?
+  - The only machine allowed to access the ELK VM is the Jump-Box configured with the IP address of 10.0.0.4 
+  
 
 A summary of the access policies in place can be found in the table below.
 
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
-| Jump Box | Yes/No              | 10.0.0.1 10.0.0.2    |
-|          |                     |                      |
-|          |                     |                      |
+| Jump Box | Yes                 | 184.144.115.191      |
+| Web 1 VM | No                  | 10.0.0.4             |
+| Web 2 VM | No                  | 10.0.0.4             |
+| ELK VM   | No                  | 10.0.0.4             |
+
 
 ### Elk Configuration
 
