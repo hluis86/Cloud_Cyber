@@ -49,7 +49,8 @@ The machines on the internal network are not exposed to the public Internet.
 
 Only the Jum-Box-Provisioner machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
 
-- White List:   184.144.115.191 
+- White List:   
+  - 184.144.115.191 
 
 Machines within the network can only be accessed by Jump-Bpx-Provisioner.
 - _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_
