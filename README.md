@@ -115,14 +115,37 @@ These Beats allow us to collect the following information from each machine:
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the _____ file to _____.
+- Copy the playbooks files to Ansible Container /etc/ansible.
 - Update the _[host](Ansible/hosts)_ file to include the Web Servers IP's and ELK Server IP
-- Run the playbook, and navigate to ____ to check that the installation worked as expected.
+- Run the playbook, and navigate to  Kibana (http://[ELK Server IP:5601]/app/kibana#/home) check that the installation worked as expected.
 
-_TODO: Answer the following questions to fill in the blanks:_
+
 - _Which file is the playbook? Where do you copy it?_
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
-- _Which URL do you navigate to in order to check that the ELK server is running?
 
+
+- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_ 
+     Open the - _[host](Ansible/hosts)_ playbook,
+     and do the changes on:
+     
+     - [webservers] to run the playbooks to instal the DVWA 
+
+
+        10.0.0.6 ansible_python_interpreter=/usr/bin/python3 ansible_ssh_private_key_file=/root/.ssh/id_rsa 
+        10.0.0.7 ansible_python_interpreter=/usr/bin/python3 ansible_ssh_private_key_file=/root/.ssh/id_rsa
+
+     
+     
+     - [elk] to run playbooks to instal kabana
+    
+        10.2.0.4  ansible_python_interpreter=/usr/bin/python3 ansible_ssh_private_key_file=/root/.ssh/id_rsa
+     
+     
+     - [elkm] for wich the Filebeats and Metricbeats have to be installed
+     
+       10.0.0.6 ansible_python_interpreter=/usr/bin/python3 ansible_ssh_private_key_file=/root/.ssh/id_rsa
+       10.0.0.7 ansible_python_interpreter=/usr/bin/python3 ansible_ssh_private_key_file=/root/.ssh/id_rsa
+
+- _Which URL do you navigate to in order to check that the ELK server is running?
+    - The URL is  (http://[ELK Server IP:5601]/app/kibana#/home)
 
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
