@@ -36,12 +36,12 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
 The configuration details of each machine may be found below.
 
 
-| Name       | Function   | IP Address | Operating System |
-|------------|------------|------------|------------------|
-| Jump Box   | Gateway    | 10.0.0.4   | Linux            |
-| Web-1      | Web Server | 10.0.0.7   | Linux            |
-| Web-2      | Web Server | 10.0.0.6   | Linux            |
-| Elk-Server | Monitoring | 10.2.0.4   | Linux            |
+| Name       | Function   | Private IP |  Public IP    | Operating System |
+|------------|------------|------------|---------------|------------------|
+| Jump Box   | Gateway    | 10.0.0.4   | 5.10          | Linux            |
+| Web-1      | Web Server | 10.0.0.7   |               | Linux            |
+| Web-2      | Web Server | 10.0.0.6   |               | Linux            |
+| Elk-Server | Monitoring | 10.2.0.4   | 20.196.215.10 | Linux            |
 
 ### Access Policies
 
@@ -70,23 +70,32 @@ A summary of the access policies in place can be found in the table below.
 ### Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-- _TODO: What is the main advantage of automating configuration with Ansible?_
-
+- What is the main advantage of automating configuration with Ansible?
+  - The main advantages of automating configuration with ansible is reducing time and configurations on deploying systems, limiting the number of tasks and simplicity.
+  
+  
 The playbook implements the following tasks:
-- _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
-- ...
-- ...
+- In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
+  - First I, SSH into the Jump-Box-Provisioner (ssh hluis@40.117.224.154)
+  - Start/Attached to the ansible docker (sudo docker start sweet_sinoussi)/(sudo docker attach sweet_sinoussi)
+  - Went to /etc/ansible/ directory and created the ELK playbook (Elk_Playbook.yml)
+  - Ran the Elk_Playbook.yml in that same directory (ansible-playbook Elk_Playbook.yml)
+  - Lastly, I SSH into the ELK-VM to verify the server is up and running.
+   
+  
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
-![TODO: Update the path with the name of your screenshot of docker ps output](Images/docker_ps_output.png)
+![TODO: Update the path with the name of your screenshot of docker ps output](PrintSCR/Docker_ps.jpg)
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
-- _TODO: List the IP addresses of the machines you are monitoring_
+- WEB-1: 10.0.0.7
+- WEB-2: 10.0.0.6
 
 We have installed the following Beats on these machines:
-- _TODO: Specify which Beats you successfully installed_
+- Filebeats
+- Metricsbeats
 
 These Beats allow us to collect the following information from each machine:
 - _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
