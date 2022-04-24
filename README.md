@@ -67,7 +67,8 @@ A summary of the access policies in place can be found in the table below.
 | ELK VM   | No                  | 10.0.0.4             |
 
 
-### Elk Configuration
+### Elk Configuration 
+  - _[ELK Install YAML](Linux/install_elk.yml)_
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
 - What is the main advantage of automating configuration with Ansible?
