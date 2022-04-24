@@ -36,12 +36,12 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
 The configuration details of each machine may be found below.
 
 
-| Name       | Function   | Private IP |  Public IP    | Operating System |
-|------------|------------|------------|---------------|------------------|
-| Jump Box   | Gateway    | 10.0.0.4   | 5.10          | Linux            |
-| Web-1      | Web Server | 10.0.0.7   |               | Linux            |
-| Web-2      | Web Server | 10.0.0.6   |               | Linux            |
-| Elk-Server | Monitoring | 10.2.0.4   | 20.196.215.10 | Linux            |
+| Name       | Function   | Private IP |  Public IP         | Operating System |
+|------------|------------|------------|--------------------|------------------|
+| Jump Box   | Gateway    | 10.0.0.4   |                    | Linux            |
+| Web-1      | Web Server | 10.0.0.7   |                    | Linux            |
+| Web-2      | Web Server | 10.0.0.6   |                    | Linux            |
+| Elk-Server | Monitoring | 10.2.0.4   | 20.196.215.10:5601 | Linux            |
 
 ### Access Policies
 
