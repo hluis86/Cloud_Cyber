@@ -38,9 +38,9 @@ The configuration details of each machine may be found below.
 
 | Name       | Function   | Private IP |  Public IP         | Operating System |
 |------------|------------|------------|--------------------|------------------|
-| Jump Box   | Gateway    | 10.0.0.4   |                    | Linux            |
-| Web-1      | Web Server | 10.0.0.7   |                    | Linux            |
-| Web-2      | Web Server | 10.0.0.6   |                    | Linux            |
+| Jump Box   | Gateway    | 10.0.0.4   | 20.70.196.209      | Linux            |
+| Web-1      | Web Server | 10.0.0.7   | 20.53.253.234      | Linux            |
+| Web-2      | Web Server | 10.0.0.6   | 20.53.253.234      | Linux            |
 | Elk-Server | Monitoring | 10.2.0.4   | 20.196.215.10:5601 | Linux            |
 
 ### Access Policies
