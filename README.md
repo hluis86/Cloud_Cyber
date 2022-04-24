@@ -30,8 +30,8 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
 - What does Filebeat watch for?
   - Filebeat monitors the log files or specific locations that you can select, collects log events and forwards to the Logstash or Elasticsearch for indexing. 
 
-- TODO: What does Metricbeat record?
-  -Meatricbeat collects metrics from the operating system and from the services running on the server and sends it to the Elastichsearch or Logstash.
+- What does Metricbeat record?
+  - Meatricbeat collects metrics from the operating system and from the services running on the server and sends it to the Elastichsearch or Logstash.
    
 The configuration details of each machine may be found below.
 
@@ -105,14 +105,18 @@ We have installed the following Beats on these machines:
   - _[Meatricbeats Playbook](Ansible/metricsbeat-playbook.yml)_
 
 These Beats allow us to collect the following information from each machine:
-- _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
+ 
+  - From Metricbeats we are able to collect data such as CPU, Memory, Network Traffic. With the Network Traffic data we can use it to determin spikes of use that can determin DDOS atacks, or possible data exportation. 
+
+  - From Filebeats, we are able to collect data such as Syslogs, SSH logins, Sudo commands. With the Sudo commands data we can use it to determin attemps of logins,  privilege escalation 
+  
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
 - Copy the _____ file to _____.
-- Update the _____ file to include...
+- Update the _![host](Ansible/hosts)_ file to include the Web Servers IP's and ELK Server IP
 - Run the playbook, and navigate to ____ to check that the installation worked as expected.
 
 _TODO: Answer the following questions to fill in the blanks:_
