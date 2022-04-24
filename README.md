@@ -96,7 +96,7 @@ This ELK server is configured to monitor the following machines:
 
 We have installed the following Beats on these machines:
 
--Filebeats
+- Filebeats
   - _[Filebeats Playbook](Ansible/filebeat-playbook.yml)_
   - _[Filebeats Config Playbook](Ansible/filebeat-config.yml)_
   
